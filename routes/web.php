@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
-
+Route::group(['middleware',['web','cekuser:["ADMIN"]']],
+function(){
+    Route::get('/kategori/data','KategoriController@listData')->name('kategori.data');
+    Route::resource('kategori','KategoriController');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
