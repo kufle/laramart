@@ -31,6 +31,7 @@ function(){
 
 Route::group(['middleware',['web','cekuser:["ADMIN"]']],
 function(){
+    Route::get('/supplier/data','SupplierController@listData')->name("supplier.data");
     Route::resource('supplier','SupplierController');
 });
 
