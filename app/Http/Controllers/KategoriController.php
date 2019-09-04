@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Validator;
 class KategoriController extends Controller
 {
     /**
@@ -55,7 +55,10 @@ class KategoriController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        \Validator::make($request->all(),[
+            "category_name" => "required",
+        ])->validate();
         $kategori = new \App\Kategori;
 
         $kategori->category_name = $request->get('category_name');

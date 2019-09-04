@@ -1,7 +1,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="modal-form">
     <div class="modal-dialog" role="document">
     <div class="modal-content">
-        <form method="POST">
+        <form method="POST" class="needs-validation" novalidate>
             @csrf
             <input type="hidden" name="_method">
         <div class="modal-header">
@@ -15,13 +15,16 @@
             <div class="form-group">
                 <label for="category">Nama Kategori</label>
                 <input type="text" name="category_name" id="category_name" class="form-control" autofocus required>
+                <div class="invalid-feedback">
+                    Isi nama Kategori
+                </div>
             </div>
         </div>
         <div class="modal-footer bg-whitesmoke br">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-primary">Save changes</button>
-        </form>
         </div>
+        </form>
     </div>
     </div>
 </div>
