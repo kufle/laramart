@@ -263,6 +263,7 @@
             <li class="{{Request::path() == 'kategori' ? 'active' : ''}}"><a class="nav-link" href="{{route('kategori.index')}}"><i class="far fa-square"></i> <span>Kategori</span></a></li>
             <li class="{{Request::path() == 'produk' ? 'active' : ''}}"><a class="nav-link" href="{{route('produk.index')}}"><i class="far fa-square"></i> <span>Produk</span></a></li>
             <li class="{{Request::path() == 'supplier' ? 'active' : ''}}"><a class="nav-link" href="{{route('supplier.index')}}"><i class="far fa-square"></i> <span>Supplier</span></a></li>
+            <li class="{{Request::path() == 'member' ? 'active' : ''}}"><a class="nav-link" href="{{route('member.index')}}"><i class="far fa-square"></i> <span>Member</span></a></li>
            
           </ul>
 

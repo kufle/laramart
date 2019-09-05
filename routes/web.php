@@ -34,7 +34,13 @@ function(){
     Route::get('/supplier/data','SupplierController@listData')->name("supplier.data");
     Route::resource('supplier','SupplierController');
 });
-
+Route::group(['middleware',['web','cekuser:["ADMIN"]']],
+function(){
+    Route::get('/member/data','MemberController@listData')->name("member.data");
+    Route::delete("/member/delete-batch","MemberController@deleteBatch")->name("member.delete-batch");
+    Route::post("/member/cetak","MemberController@printCard");
+    Route::resource("member","MemberController");
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

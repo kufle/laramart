@@ -97,13 +97,14 @@ $(function(){
                 url : url,
                 type : "POST",
                 data : $("#modal-form form").serialize(),
-                dataType : "json",
+                dataType : "JSON",
                 success : function(data){
-                    $('#modal-form').modal('hide');
-                    table.ajax.reload();
                     if(data.msg=="error"){
                         swal("Error","Kode Produk sudah pernah di gunakan","error");
+                        $("#kode").focus().select();
                     }else{
+                        $('#modal-form').modal('hide');
+                        table.ajax.reload();
                         if(save_method=="add"){
                         swal("Sukses","Sukses menambah Produk","success");
                         }else{
