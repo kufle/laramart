@@ -41,6 +41,21 @@ function(){
     Route::post("/member/cetak","MemberController@printCard");
     Route::resource("member","MemberController");
 });
+Route::group(['middleware',['web','cekuser:["ADMIN"]']],
+function(){
+    Route::get("/pengeluaran/data","PengeluaranController@listData")->name("pengeluaran.data");
+    Route::resource("pengeluaran","PengeluaranController");
+});
+Route::group(['middleware',['web','cekuser:["ADMIN"]']],
+function(){
+    Route::get('users/data','UserController@listData')->name("users.data");
+    Route::resource('users','UserController');
+});
+Route::group(['middleware',['web']],
+function(){
+    Route::get('users/profile/','UserController@profile')->name("users.profile");
+    Route::put('users/{id}/change','UserController@changeProfile');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

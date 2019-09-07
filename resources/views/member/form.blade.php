@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <label for="alamat" class="col-sm-3 col-form-label">Alamat</label>
                     <div class="col-sm-9">
-                        <textarea name="alamat" id="alamat" class="form-control"></textarea>
+                        <textarea name="alamat" id="alamat" class="form-control" required></textarea>
                     </div>
                 </div>
 

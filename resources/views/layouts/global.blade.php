@@ -264,6 +264,7 @@
             <li class="{{Request::path() == 'produk' ? 'active' : ''}}"><a class="nav-link" href="{{route('produk.index')}}"><i class="far fa-square"></i> <span>Produk</span></a></li>
             <li class="{{Request::path() == 'supplier' ? 'active' : ''}}"><a class="nav-link" href="{{route('supplier.index')}}"><i class="far fa-square"></i> <span>Supplier</span></a></li>
             <li class="{{Request::path() == 'member' ? 'active' : ''}}"><a class="nav-link" href="{{route('member.index')}}"><i class="far fa-square"></i> <span>Member</span></a></li>
+            <li class="{{Request::path() == 'pengeluaran' ? 'active' : ''}}"><a class="nav-link" href="{{route('pengeluaran.index')}}"><i class="far fa-square"></i> <span>Pengeluaran</span></a></li>
            
           </ul>
 
