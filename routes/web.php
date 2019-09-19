@@ -46,16 +46,22 @@ function(){
     Route::get("/pengeluaran/data","PengeluaranController@listData")->name("pengeluaran.data");
     Route::resource("pengeluaran","PengeluaranController");
 });
+Route::group(['middleware','web'],
+function(){
+    Route::get('/users/profile','UserController@profile')->name("users.profile");
+    Route::put('/users/{id}/change','UserController@changeProfile');
+});
 Route::group(['middleware',['web','cekuser:["ADMIN"]']],
 function(){
     Route::get('users/data','UserController@listData')->name("users.data");
     Route::resource('users','UserController');
 });
-Route::group(['middleware',['web']],
+
+Route::group(['middleware',['web','cekuser:["ADMIN"]']],
 function(){
-    Route::get('users/profile/','UserController@profile')->name("users.profile");
-    Route::put('users/{id}/change','UserController@changeProfile');
+    Route::resource('pembelian','PembelianController');
 });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

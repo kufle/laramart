@@ -224,11 +224,11 @@
             </div>
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div></a>
+            <img alt="image" src="{{asset('avatar/'. Auth::user()->avatar)}}" class="rounded-circle mr-1 avatars">
+            <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
-              <a href="features-profile.html" class="dropdown-item has-icon">
+              <a href="{{route('users.profile')}}" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>
               <a href="features-activities.html" class="dropdown-item has-icon">
@@ -257,15 +257,13 @@
             <a href="index.html">St</a>
           </div>
           <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
-            
-            
+            <li class="menu-header">Dashboard</li>  
             <li class="{{Request::path() == 'kategori' ? 'active' : ''}}"><a class="nav-link" href="{{route('kategori.index')}}"><i class="far fa-square"></i> <span>Kategori</span></a></li>
             <li class="{{Request::path() == 'produk' ? 'active' : ''}}"><a class="nav-link" href="{{route('produk.index')}}"><i class="far fa-square"></i> <span>Produk</span></a></li>
             <li class="{{Request::path() == 'supplier' ? 'active' : ''}}"><a class="nav-link" href="{{route('supplier.index')}}"><i class="far fa-square"></i> <span>Supplier</span></a></li>
             <li class="{{Request::path() == 'member' ? 'active' : ''}}"><a class="nav-link" href="{{route('member.index')}}"><i class="far fa-square"></i> <span>Member</span></a></li>
             <li class="{{Request::path() == 'pengeluaran' ? 'active' : ''}}"><a class="nav-link" href="{{route('pengeluaran.index')}}"><i class="far fa-square"></i> <span>Pengeluaran</span></a></li>
-           
+            <li class="{{Request::path() == 'users' ? 'active' : ''}}"><a class="nav-link" href="{{route('users.index')}}"><i class="far fa-square"></i> <span>Users</span></a></li>
           </ul>
 
           </aside>

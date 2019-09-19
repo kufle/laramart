@@ -48,7 +48,7 @@
             }
         });
 
-        $("#modal-form").on('submit',function(e){
+        $("#modal-form form").on('submit',function(e){
             if(!e.isDefaultPrevented()){
                 var id = $("#id").val();
                 if(save_method=="add"){

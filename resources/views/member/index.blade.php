@@ -63,7 +63,7 @@ $(function(){
         'order' : [1,'asc']
     });
 
-    $("#modal-form").on('submit',function(e){
+    $("#modal-form form").on('submit',function(e){
     if(!e.isDefaultPrevented()){
         if(save_method == "add"){
             url = "{{route('member.store')}}";
